@@ -1,0 +1,28 @@
+{
+  "name": "emity",
+  "version": "0.0.1",
+  "description": "Event System Lib",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "npm test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:djalmaaraujo/emity.git"
+  },
+  "keywords": [
+    "events",
+    "emitter",
+    "javascript",
+    "node"
+  ],
+  "author": "Djalma Araujo",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/djalmaaraujo/emity/issues"
+  },
+  "homepage": "https://github.com/djalmaaraujo/emity"
+}
