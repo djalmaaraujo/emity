@@ -1,4 +1,4 @@
-(module ? module : window)[module ? 'exports' : 'Emity'] = function () {
+(typeof module !== 'undefined' ? module : window)[typeof module !== 'undefined' ? 'exports' : 'Emity'] = function () {
   this.events = [];
 
   this.on = function (name, callback, context) {
