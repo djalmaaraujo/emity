@@ -1,4 +1,4 @@
-[![Build Status](https://drone.io/github.com/djalmaaraujo/emity/status.png)](https://drone.io/github.com/djalmaaraujo/emity/latest)
+[![Build Status](https://travis-ci.org/djalmaaraujo/emity.svg?branch=master)](https://travis-ci.org/djalmaaraujo/emity)
 
 # Emity
 A simple event system library. Supports Browser or Node environments.
