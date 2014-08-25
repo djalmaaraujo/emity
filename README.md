@@ -8,6 +8,10 @@ A simple event system library. Supports Browser or Node environments.
 npm install emity
 ```
 
+```bash
+bower install emity
+```
+
 # Usage
 ```javascript
 var emity   = new Emity();
