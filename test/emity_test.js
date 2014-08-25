@@ -8,10 +8,6 @@ describe('Emity', function () {
     m.emity = new Emity();
   });
 
-  afterEach(function() {
-    m.emity = null;
-  });
-
   describe('constructor', function () {
     it('expect to have an Emity instance', function () {
       expect(m.emity).to.be.an.instanceof(Emity);
@@ -60,21 +56,48 @@ describe('Emity', function () {
     });
 
     describe('Without arguments', function () {
-      beforeEach(function () {
+      it('expect to remove all events if nothing is passed', function () {
         m.emity.on('open', function () {}, {});
         m.emity.on('close', function () {}, {});
-      });
-
-      it('expect to remove all events if nothing is passed', function () {
         m.emity.off();
 
         expect(m.emity.events).to.be.eql([]);
+      });
+    });
+
+    describe('With arguments', function () {
+      beforeEach(function () {
+        m.commonCallBack = function () {}, {};
+        m.emity.on('open', m.commonCallBack);
+        m.emity.on('open', function () {
+          console.log('################');
+        }, {});
+
+        m.emity.on('close', function () {}, {});
       });
 
       it('expect to remove all events when * is passed', function () {
         m.emity.off('*');
 
         expect(m.emity.events).to.be.eql([]);
+      });
+
+      describe('Without callback', function () {
+        it('expect to remove all events for that name', function() {
+          m.emity.off('open');
+
+          expect(m.emity.events['open'].length).equal(0);
+          expect(m.emity.events['close'].length).equal(1);
+        });
+      });
+
+      describe('With callback', function () {
+        it('expect to remove only the event with the same callback', function () {
+          m.emity.off('open', m.commonCallBack);
+
+          expect(m.emity.events['open'].length).equal(1);
+          expect(m.emity.events['close'].length).equal(1);
+        });
       });
     });
   });

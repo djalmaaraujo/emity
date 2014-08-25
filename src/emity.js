@@ -11,9 +11,21 @@ var Emity = function () {
     return this;
   };
 
-  this.off = function (type) {
+  this.off = function (type, cb) {
     if ((arguments.length == 0) || (type === '*')) {
       this.events = [];
+      return this;
+    }
+
+    if (!cb) {
+      this.events[type] = [];
+      return this;
+    }
+
+    for (var i = 0 ; i < this.events[type].length ; i++) {
+      if (cb === this.events[type][i].cb) {
+        this.events[type].splice(i, 1);
+      }
     }
 
     return this;
