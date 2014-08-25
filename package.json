@@ -3,9 +3,6 @@
   "version": "0.0.1",
   "description": "Event System Lib",
   "main": "index.js",
-  "directories": {
-    "test": "test"
-  },
   "scripts": {
     "test": "mocha test"
   },
@@ -27,6 +24,9 @@
   "homepage": "https://github.com/djalmaaraujo/emity",
   "devDependencies": {
     "expect.js": "^0.3.1",
-    "mocha": "^1.21.4"
+    "mocha": "*"
+  },
+  "enginies": {
+    "node": "0.10.x"
   }
 }
