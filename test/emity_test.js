@@ -110,5 +110,31 @@ describe('Emity', function () {
     it('expect to return same instance', function () {
       expect(m.emity.emit()).to.be.an.instanceof(Emity);
     });
+
+    it('expect to dispatch an event', function () {
+      var count = 0;
+      m.emity.on('hello', function () {
+        count++;
+      }, {});
+
+      m.emity.emit('hello');
+      expect(count).to.equal(1);
+    });
+
+    it('expect to dispatch multiple callbacks', function () {
+      var count = 0;
+      var count2 = 1;
+      m.emity.on('hello', function () {
+        count++;
+      }, {});
+
+      m.emity.on('hello', function () {
+        count2++;
+      }, {});
+
+      m.emity.emit('hello');
+      expect(count).to.equal(1);
+      expect(count2).to.equal(2);
+    });
   });
 });

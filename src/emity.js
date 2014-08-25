@@ -32,6 +32,14 @@ var Emity = function () {
   };
 
   this.emit = function () {
+    var args   = Array.apply([], arguments);
+    var events = this.events[args.shift()] || [];
+    var i      = 0, j;
+
+    for(;j = events[i++];) {
+      j.cb.apply(j.ctx, args);
+    }
+
     return this;
   };
 };
