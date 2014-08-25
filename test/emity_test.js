@@ -101,4 +101,14 @@ describe('Emity', function () {
       });
     });
   });
+
+  describe('#emit', function () {
+    it('expect to have an method emit', function () {
+      expect(m.emity.emit).to.exist;
+    });
+
+    it('expect to return same instance', function () {
+      expect(m.emity.emit()).to.be.an.instanceof(Emity);
+    });
+  });
 });

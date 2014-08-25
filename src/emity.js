@@ -30,6 +30,10 @@ var Emity = function () {
 
     return this;
   };
+
+  this.emit = function () {
+    return this;
+  };
 };
 
 module.exports = Emity;
