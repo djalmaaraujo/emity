@@ -1,7 +1,7 @@
 [![Build Status](https://drone.io/github.com/djalmaaraujo/emity/status.png)](https://drone.io/github.com/djalmaaraujo/emity/latest)
 
 # Emity
-A simple event system library. Supports Browse or Node environments.
+A simple event system library. Supports Browser or Node environments.
 
 # Installation
 ```bash
