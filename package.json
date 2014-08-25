@@ -23,6 +23,7 @@
   },
   "homepage": "https://github.com/djalmaaraujo/emity",
   "devDependencies": {
+    "chai": "1.9.1",
     "expect.js": "*",
     "mocha": "*"
   },
