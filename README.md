@@ -14,6 +14,8 @@ bower install emity
 
 # Usage
 ```javascript
+var Emity = require('emity'); // For node
+
 var emity   = new Emity();
 var context = {};
 
