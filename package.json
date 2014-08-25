@@ -2,7 +2,7 @@
   "name": "emity",
   "version": "0.0.1",
   "description": "Event System Lib",
-  "main": "index.js",
+  "main": "src/emity.js",
   "scripts": {
     "test": "mocha test"
   },

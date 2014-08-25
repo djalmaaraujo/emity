@@ -1,0 +1,16 @@
+{
+  "name": "Emity",
+  "version": "0.0.1",
+  "homepage": "https://github.com/djalmaaraujo/emity",
+  "authors": [
+    "djalmaaraujo <djalma.araujo@gmail.com>"
+  ],
+  "description": "A simple event system library. Supports Browser or Node environment.",
+  "main": "src/emity.js",
+  "keywords": [
+    "event",
+    "javascript",
+    "library"
+  ],
+  "license": "MIT"
+}
