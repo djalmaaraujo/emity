@@ -1,4 +1,4 @@
-var Emity = function () {
+(module ? module : window)[module ? 'exports' : 'Emity'] = function () {
   this.events = [];
 
   this.on = function (name, callback, context) {
@@ -43,5 +43,3 @@ var Emity = function () {
     return this;
   };
 };
-
-module.exports = Emity;
