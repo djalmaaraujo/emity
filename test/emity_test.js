@@ -8,6 +8,10 @@ describe('Emity', function () {
     m.emity = new Emity();
   });
 
+  afterEach(function() {
+    m.emity = null;
+  });
+
   describe('constructor', function () {
     it('expect to have an Emity instance', function () {
       expect(m.emity).to.be.an.instanceof(Emity);
@@ -42,6 +46,35 @@ describe('Emity', function () {
         m.emity.on('name', function () {}, {});
 
         expect(m.emity.events['name']).to.have.length.of.at.least(3);
+      });
+    });
+  });
+
+  describe('#off', function () {
+    it('expect to have an method off', function () {
+      expect(m.emity.off).to.exist;
+    });
+
+    it('expect to return same instance', function () {
+      expect(m.emity.off()).to.be.an.instanceof(Emity);
+    });
+
+    describe('Without arguments', function () {
+      beforeEach(function () {
+        m.emity.on('open', function () {}, {});
+        m.emity.on('close', function () {}, {});
+      });
+
+      it('expect to remove all events if nothing is passed', function () {
+        m.emity.off();
+
+        expect(m.emity.events).to.be.eql([]);
+      });
+
+      it('expect to remove all events when * is passed', function () {
+        m.emity.off('*');
+
+        expect(m.emity.events).to.be.eql([]);
       });
     });
   });

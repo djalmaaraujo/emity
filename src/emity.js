@@ -10,6 +10,14 @@ var Emity = function () {
 
     return this;
   };
+
+  this.off = function (type) {
+    if ((arguments.length == 0) || (type === '*')) {
+      this.events = [];
+    }
+
+    return this;
+  };
 };
 
 module.exports = Emity;
