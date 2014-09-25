@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/djalmaaraujo/emity.svg?branch=master)](https://travis-ci.org/djalmaaraujo/emity)
+[![Build Status](https://travis-ci.org/cconsultants/emity.svg?branch=master)](https://travis-ci.org/cconsultants/emity)
 
 # Emity
 A simple event system library. Supports Browser or Node environments.
