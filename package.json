@@ -4,7 +4,8 @@
   "description": "Event System Lib",
   "main": "src/emity.js",
   "scripts": {
-    "test": "mocha test"
+    "test": "mocha test",
+    "watch": "mocha test --watch"
   },
   "repository": {
     "type": "git",

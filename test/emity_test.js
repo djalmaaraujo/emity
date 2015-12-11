@@ -46,6 +46,27 @@ describe('Emity', function () {
     });
   });
 
+  describe('#once', function () {
+    it('expect to have an method once', function () {
+      expect(m.emity.once).to.exist;
+    });
+
+    it('expect to return same instance', function () {
+      expect(m.emity.once()).to.be.an.instanceof(Emity);
+    });
+
+    describe('With arguments', function () {
+      it('expect to add the arguments to events array', function () {
+        m.emity.once('name', function () {}, {});
+
+        expect(m.emity.events['name'][0].ev).to.equal('name');
+        expect(typeof m.emity.events['name'][0].cb).to.equal('function')
+        expect(m.emity.events['name'][0].ctx).to.eql({});
+        expect(m.emity.events['name'][0].once).to.eql(true);
+      });
+    });
+  });
+
   describe('#off', function () {
     it('expect to have an method off', function () {
       expect(m.emity.off).to.exist;
@@ -135,6 +156,30 @@ describe('Emity', function () {
       m.emity.emit('hello');
       expect(count).to.equal(1);
       expect(count2).to.equal(2);
+    });
+
+    it('expect to call once events once', function () {
+      var count = 0;
+      var count2 = 0;
+
+      m.emity.once('hello', function () {
+        count++;
+      }, {});
+
+      m.emity.on('hello2', function () {
+        count2++;
+      }, {});
+
+      m.emity.emit('hello');
+      m.emity.emit('hello');
+      m.emity.emit('hello');
+
+      m.emity.emit('hello2');
+      m.emity.emit('hello2');
+      m.emity.emit('hello2');
+
+      expect(count).to.equal(1);
+      expect(count2).to.equal(3);
     });
   });
 });
